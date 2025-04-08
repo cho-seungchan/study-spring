@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EX09</title>
+</head>
+<body>
+    <form action="/ex/ex09" method="post" name="school-form">
+        <input type="text" name="name" value="강남초등학교">
+<!--        <input type="text" name="students[0].name" value="한동석">-->
+<!--        <input type="text" name="students[0].score" value="50">-->
+<!--        <input type="text" name="students[1].name" value="홍길동">-->
+<!--        <input type="text" name="students[1].score" value="20">-->
+<!--        <input type="text" name="students[2].name" value="이순신">-->
+<!--        <input type="text" name="students[2].score" value="100">-->
+        <input type="text" id="name" placeholder="이름">
+        <div id="student-name-wrap"></div>
+        <input type="text" id="score" placeholder="점수">
+        <div id="student-score-wrap"></div>
+        <button id="send" type="button">전송!</button>
+    </form>
+</body>
+<script>
+    const nameInput = document.getElementById("name");
+    const scoreInput = document.getElementById("score");
+    const nameWrap = document.getElementById("student-name-wrap");
+    const scoreWrap = document.getElementById("student-score-wrap");
+    const sendButton = document.getElementById("send");
+    const names = new Array();
+    const scores = new Array();
+
+    nameInput.addEventListener("keydown", (e) => {
+        if(e.keyCode === 13){
+            e.preventDefault();
+        }
+    });
+
+    nameInput.addEventListener("keyup", (e) => {
+        if(e.keyCode === 13){
+            names.push(e.target.value);
+            nameWrap.innerHTML += `<div>${e.target.value}</div>`
+            e.target.value = "";
+        }
+    });
+
+    scoreInput.addEventListener("keydown", (e) => {
+        if(e.key === 'Enter'){
+            e.preventDefault();
+        }
+    });
+
+    scoreInput.addEventListener("keyup", (e) => {
+        if(e.key === 'Enter'){
+            scores.push(e.target.value);
+            scoreWrap.innerHTML += `<div>${e.target.value}</div>`
+            e.target.value = "";
+        }
+    });
+
+    sendButton.addEventListener("click", (e) => {
+        let text = "";
+        names.forEach((name, i) => {
+            text += `<input type=text name="students[${i}].name" value=${name}>`;
+        });
+
+        scores.forEach((score, i) => {
+            text += `<input type=text name="students[${i}].score" value=${score}>`;
+        });
+
+        document['school-form'].innerHTML += text;
+        document['school-form'].submit();
+    });
+
+
+</script>
+</html>
