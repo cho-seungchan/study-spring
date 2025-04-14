@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.mysql.mapper.OnlineMapper">
+    <insert id="insert">
+        insert into tbl_online (id, market_name)
+        values (#{id}, #{marketName})
+    </insert>
+
+    <update id="update">
+        update tbl_online
+        set market_name = #{marketName}
+        where id = #{id}
+    </update>
+
+    <select id="selectDtoById" resultType="productOnlineDTO">
+        select id, product_name, product_price, product_stock, market_name, createdDate, updatedDate
+        from view_online
+        where id = #{id} and status = 'enable'
+    </select>
+
+    <select id="selectAll">
+        select id, product_name, product_price, product_stock, market_name, createdDate, updatedDate
+        from view_online
+        where status = 'enable'
+        limit #{offset}, #{rowCount}
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
