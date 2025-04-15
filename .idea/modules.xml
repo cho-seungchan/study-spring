@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/controller.main.iml" filepath="$PROJECT_DIR$/.idea/modules/controller.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dependency.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dependency.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dependency.test.iml" filepath="$PROJECT_DIR$/.idea/modules/dependency.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mybatis.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mybatis.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mybatis.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mybatis.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/threetier.main.iml" filepath="$PROJECT_DIR$/.idea/modules/threetier.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/threetier.test.iml" filepath="$PROJECT_DIR$/.idea/modules/threetier.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/workspace.iml" filepath="$PROJECT_DIR$/.idea/workspace.iml" />
     </modules>
   </component>
